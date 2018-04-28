@@ -6,7 +6,7 @@ environment:
     OPENSSL_DIR: C:\OpenSSL
     RUST_BACKTRACE: 1
     test_script:
-      - scripts/test_dns_over_rustls.sh
+      - cargo test --manifest-path resolver/Cargo.toml --features dns-over-rustls
 
   # - TARGET: i686-pc-windows-msvc
   #   BITS: 32

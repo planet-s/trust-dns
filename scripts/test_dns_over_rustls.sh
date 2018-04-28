@@ -1,9 +1,9 @@
 #!/bin/bash -e
 
-# set -x
+set -x
 
-# trust_dns_dir=$(dirname $0)/..
-# cd ${trust_dns_dir:?}
+trust_dns_dir=$(dirname $0)/..
+cd ${trust_dns_dir:?}
 
 # Build all tests
 cargo test --manifest-path resolver/Cargo.toml --features dns-over-rustls
