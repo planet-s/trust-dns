@@ -103,7 +103,7 @@ impl Resolver {
     /// Constructs a new Resolver with the system configuration.
     ///
     /// This will use `/etc/resolv.conf` on Unix OSes and the registry on Windows.
-    #[cfg(any(unix, target_os = "windows"))]
+    #[cfg(any(unix, target_os = "windows", target_os = "redox"))]
     pub fn from_system_conf() -> io::Result<Self> {
         let (config, options) = super::system_conf::read_system_conf()?;
         Self::new(config, options)

@@ -12,10 +12,10 @@
 //!  system, e.g. most Unixes have this written to `/etc/resolv.conf`
 #![allow(missing_docs, unused_extern_crates)]
 
-#[cfg(unix)]
+#[cfg(any(unix, target_os = "redox"))]
 mod unix;
 
-#[cfg(unix)]
+#[cfg(any(unix, target_os = "redox"))]
 pub use self::unix::read_system_conf;
 
 #[cfg(windows)]
